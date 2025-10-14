@@ -82,7 +82,3 @@ Core methods:
 ## Development
 
 The project includes a dummy implementation for development without an active Minecraft server. This allows for testing and development of blocks without requiring a running Minecraft instance.
-
-## License
-
-This project is part of EduBlocks. Please refer to the main EduBlocks repository for license information.

@@ -62,9 +62,6 @@
             </shadow>
         </value>
     </block>
-            </shadow>
-        </value>
-    </block>
 
     <block type="train_model">
         <value name="parameters">

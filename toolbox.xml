@@ -1,103 +1,67 @@
-<category name="ML4Kids" colour="#4a4b5f" css-icon="customIcon fad fa-head-side-brain">
-    <label text="Machine Learning For Kids"></label>
+<category name="Minecraft" colour="#5C9C3D" css-icon="customIcon fad fa-cube">
+    <label text="Minecraft MCPI"></label>
 
-    <block type="import_mlmodel"></block>
+    <block type="import_mcpi_blocks"></block>
+    <block type="import_mcpi_structures"></block>
 
-    <block type="import_mltext"></block>
-
-    <block type="import_mlnumbers"></block>
-
-    <block type="check_model">
-        <value name="parameters">
-            <shadow type="parameters">
-                <mutation color="#4a4b5f" items="1" limit="1" inputType="string" />
-                <value name="input_1">
-                    <block type="variable_get">
-                        <field name="variable_name">API_KEY</field>
-                    </block>
-                </value>
+    <block type="mcpi_place_block">
+        <value name="host">
+            <shadow type="inline_string">
+                <field name="value">127.0.0.1</field>
+            </shadow>
+        </value>
+        <value name="port">
+            <shadow type="math_number">
+                <field name="NUM">4711</field>
             </shadow>
         </value>
     </block>
 
-    <block type="classify_text">
-        <value name="parameters">
-            <shadow type="parameters">
-                <mutation color="#4a4b5f" items="2" limit="2" inputType="string" />
-                <value name="input_1">
-                    <block type="variable_get">
-                        <field name="variable_name">API_KEY</field>
-                    </block>
-                </value>
-                <value name="input_2">
-                    <shadow type="inline_string">
-                        <field name="value">Text to test</field>
-                    </shadow>
-                </value>
+    <block type="mcpi_move_player">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">64</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
             </shadow>
         </value>
     </block>
 
-    <block type="store_text">
-        <value name="parameters">
-            <shadow type="parameters">
-                <mutation color="#4a4b5f" items="3" limit="3" inputType="string" />
-                <value name="input_1">
-                    <block type="variable_get">
-                        <field name="variable_name">API_KEY</field>
-                    </block>
-                </value>
-                <value name="input_2">
-                    <shadow type="inline_string">
-                        <field name="value">Training Example</field>
-                    </shadow>
-                </value>
-                <value name="input_3">
-                    <shadow type="inline_string">
-                        <field name="value">Label</field>
-                    </shadow>
-                </value>
+    <block type="mcpi_build_wall">
+        <value name="x">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="y">
+            <shadow type="math_number">
+                <field name="NUM">64</field>
+            </shadow>
+        </value>
+        <value name="z">
+            <shadow type="math_number">
+                <field name="NUM">0</field>
+            </shadow>
+        </value>
+        <value name="width">
+            <shadow type="math_number">
+                <field name="NUM">5</field>
+            </shadow>
+        </value>
+        <value name="height">
+            <shadow type="math_number">
+                <field name="NUM">3</field>
             </shadow>
         </value>
     </block>
-
-    <block type="classify_numbers">
-        <value name="parameters">
-            <shadow type="parameters">
-                <mutation color="#4a4b5f" items="2" limit="2" inputType="string" />
-                <value name="input_1">
-                    <block type="variable_get">
-                        <field name="variable_name">API_KEY</field>
-                    </block>
-                </value>
-                <value name="input_2">
-                    <block type="variable_get">
-                        <field name="variable_name">training_data</field>
-                    </block>
-                </value>
-            </shadow>
-        </value>
-    </block>
-
-    <block type="store_numbers">
-        <value name="parameters">
-            <shadow type="parameters">
-                <mutation color="#4a4b5f" items="3" limit="3" inputType="string" />
-                <value name="input_1">
-                    <block type="variable_get">
-                        <field name="variable_name">API_KEY</field>
-                    </block>
-                </value>
-                <value name="input_2">
-                    <block type="variable_get">
-                        <field name="variable_name">training_data</field>
-                    </block>
-                </value>
-                <value name="input_3">
-                    <shadow type="inline_string">
-                        <field name="value">Label</field>
-                    </shadow>
-                </value>
             </shadow>
         </value>
     </block>

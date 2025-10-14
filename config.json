@@ -1,8 +1,8 @@
 {
     "mode": "python",
     "code": [
-        "mlmodel.py",
-        "mltext.py",
-        "mlnumbers.py"
+        "mcpi_blocks.py",
+        "mcpi_structures.py",
+        "mcpi_adapter.py"
     ]
 }

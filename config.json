@@ -1,6 +1,22 @@
 {
+    "name": "minecraft",
+    "displayName": "Minecraft",
+    "description": "Interact with Minecraft Pi Edition worlds using EduBlocks.",
     "mode": "python",
+    "color": "#5C9C3D",
+    "icon": "minecraft.png",
+    "toolbox": "toolbox.xml",
+    "blocks": {
+        "definitions": [
+            "definitions.ts"
+        ],
+        "generators": [
+            "generators.ts"
+        ]
+    },
     "code": [
         "mcpi_structures.py"
-    ]
+    ],
+    "starterCode": "from mcpi_structures import *\n",
+    "starterWorkspace": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"import_mcpi_structures\" id=\"import_mcpi_structures\" x=\"40\" y=\"40\"></block></xml>"
 }

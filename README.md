@@ -82,3 +82,7 @@ Core methods:
 ## Development
 
 The project includes a dummy implementation for development without an active Minecraft server. This allows for testing and development of blocks without requiring a running Minecraft instance.
+
+## Terms of Use
+
+See [EduBlocks terms](https://www.anaconda.com/legal/terms/edublocks)

@@ -56,7 +56,7 @@ Blockly.Blocks["mcpi_move_player"] = {
 Blockly.Blocks["mcpi_build_wall"] = {
     init: function() {
         this.appendDummyInput()
-            .appendField("blocks = example_build_wall(");
+            .appendField("blocks = build_walls(");
         this.appendValueInput("x")
             .setCheck("Number")
             .appendField("x=");

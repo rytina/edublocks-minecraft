@@ -71,8 +71,6 @@ Core methods:
 
 ## Project Structure
 
-- `mcpi_adapter.py` - Core MCPI protocol implementation
-- `mcpi_blocks.py` - Basic block manipulation functions
 - `mcpi_structures.py` - Structure building functions
 - `definitions.ts` - Block definitions for EduBlocks
 - `generators.ts` - Code generation for blocks

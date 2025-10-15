@@ -8,8 +8,6 @@ A Minecraft integration for EduBlocks that provides block-based programming capa
 - Move the player to specific coordinates
 - Build structures (like walls)
 - Send messages to Minecraft chat
-- Automatic reconnection handling
-- Fallback dummy implementation for development without Minecraft
 
 ## Requirements
 
@@ -68,10 +66,6 @@ The extension uses the standard MCPI API through the `mcpi.minecraft.Minecraft` 
 - `generators.ts` - Code generation for blocks
 - `toolbox.xml` - Toolbox configuration
 - `config.json` - Project configuration
-
-## Development
-
-The project includes a dummy implementation for development without an active Minecraft server. This allows for testing and development of blocks without requiring a running Minecraft instance.
 
 ## Terms of Use
 

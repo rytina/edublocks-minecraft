@@ -33,6 +33,16 @@
                 <field name="NUM">0</field>
             </shadow>
         </value>
+        <value name="host">
+            <shadow type="inline_string">
+                <field name="value">127.0.0.1</field>
+            </shadow>
+        </value>
+        <value name="port">
+            <shadow type="math_number">
+                <field name="NUM">4711</field>
+            </shadow>
+        </value>
     </block>
 
     <block type="mcpi_build_wall">
@@ -59,6 +69,16 @@
         <value name="height">
             <shadow type="math_number">
                 <field name="NUM">3</field>
+            </shadow>
+        </value>
+        <value name="host">
+            <shadow type="inline_string">
+                <field name="value">127.0.0.1</field>
+            </shadow>
+        </value>
+        <value name="port">
+            <shadow type="math_number">
+                <field name="NUM">4711</field>
             </shadow>
         </value>
     </block>

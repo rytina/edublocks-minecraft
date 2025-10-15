@@ -8,8 +8,6 @@ A Minecraft integration for EduBlocks that provides block-based programming capa
 - Move the player to specific coordinates
 - Build structures (like walls)
 - Send messages to Minecraft chat
-- Automatic reconnection handling
-- Fallback dummy implementation for development without Minecraft
 
 ## Requirements
 

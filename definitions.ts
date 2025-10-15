@@ -1,41 +1,37 @@
-const mcpiColor = "#5C9C3D"; // Minecraft grass block green
+import * as Blockly from "blockly";
 
+const MCPI_COLOR = "#5C9C3D"; // Minecraft grass block green
 
 Blockly.Blocks["import_mcpi_structures"] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("from mcpi_structures import *");
+    init: function () {
+        this.appendDummyInput().appendField("from mcpi_structures import *");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
-        this.setColour(mcpiColor);
+        this.setColour(MCPI_COLOR);
         this.setTooltip("Import MCPI structure building functions");
-    }
+    },
 };
 
-
-
 Blockly.Blocks["mcpi_place_block"] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("result")
+    init: function () {
+        this.appendDummyInput().appendField("place_block(");
         this.appendValueInput("host")
             .setCheck("String")
-            .appendField(" = example_place_and_report(host=");
+            .appendField("host=");
         this.appendValueInput("port")
             .setCheck("Number")
             .appendField(", port=");
-        this.appendDummyInput()
-            .appendField(")");
+        this.appendDummyInput().appendField(")");
         this.setOutput(true, null);
-        this.setColour(mcpiColor);
-        this.setTooltip("Place a block and get its position/type");
-    }
+        this.setInputsInline(true);
+        this.setColour(MCPI_COLOR);
+        this.setTooltip("Place a block and return its position");
+    },
 };
 
 Blockly.Blocks["mcpi_move_player"] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("pos = example_move_player(");
+    init: function () {
+        this.appendDummyInput().appendField("move_player(");
         this.appendValueInput("x")
             .setCheck("Number")
             .appendField("x=");
@@ -45,18 +41,23 @@ Blockly.Blocks["mcpi_move_player"] = {
         this.appendValueInput("z")
             .setCheck("Number")
             .appendField(", z=");
-        this.appendDummyInput()
-            .appendField(")");
+        this.appendValueInput("host")
+            .setCheck("String")
+            .appendField(", host=");
+        this.appendValueInput("port")
+            .setCheck("Number")
+            .appendField(", port=");
+        this.appendDummyInput().appendField(")");
         this.setOutput(true, null);
-        this.setColour(mcpiColor);
-        this.setTooltip("Move player to coordinates");
-    }
+        this.setInputsInline(true);
+        this.setColour(MCPI_COLOR);
+        this.setTooltip("Move the player to coordinates");
+    },
 };
 
 Blockly.Blocks["mcpi_build_wall"] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("blocks = build_walls(");
+    init: function () {
+        this.appendDummyInput().appendField("build_walls(");
         this.appendValueInput("x")
             .setCheck("Number")
             .appendField("x=");
@@ -72,11 +73,16 @@ Blockly.Blocks["mcpi_build_wall"] = {
         this.appendValueInput("height")
             .setCheck("Number")
             .appendField(", height=");
-        this.appendDummyInput()
-            .appendField(")");
+        this.appendValueInput("host")
+            .setCheck("String")
+            .appendField(", host=");
+        this.appendValueInput("port")
+            .setCheck("Number")
+            .appendField(", port=");
+        this.appendDummyInput().appendField(")");
         this.setOutput(true, null);
-        this.setColour(mcpiColor);
+        this.setInputsInline(true);
+        this.setColour(MCPI_COLOR);
         this.setTooltip("Build a wall structure");
-    }
+    },
 };
-  

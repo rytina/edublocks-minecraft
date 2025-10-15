@@ -1,8 +1,6 @@
 {
     "mode": "python",
     "code": [
-        "mcpi_blocks.py",
-        "mcpi_structures.py",
-        "mcpi_adapter.py"
+        "mcpi_structures.py"
     ]
 }

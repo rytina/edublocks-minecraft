@@ -4,10 +4,7 @@ Blockly.Python["import_mcpi_structures"] = function() {
     return code;
 };
 
-Blockly.Python["import_mcpi_blocks"] = function() {
-    const code = `from mcpi_blocks import *\n`;
-    return code;
-};
+
 
 Blockly.Python["mcpi_place_block"] = function(block) {
     const host = Blockly.Python.valueToCode(block, "host", Blockly.Python.ORDER_NONE) || "\"127.0.0.1\"";

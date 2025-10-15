@@ -12,16 +12,7 @@ Blockly.Blocks["import_mcpi_structures"] = {
     }
 };
 
-Blockly.Blocks["import_mcpi_blocks"] = {
-    init: function() {
-        this.appendDummyInput()
-            .appendField("from mcpi_blocks import *");
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setColour(mcpiColor);
-        this.setTooltip("Import MCPI block placement functions");
-    }
-};
+
 
 Blockly.Blocks["mcpi_place_block"] = {
     init: function() {

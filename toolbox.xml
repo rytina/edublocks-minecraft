@@ -1,7 +1,7 @@
 <category name="Minecraft" colour="#5C9C3D" css-icon="customIcon fad fa-cube">
     <label text="Minecraft MCPI"></label>
 
-    <block type="import_mcpi_blocks"></block>
+
     <block type="import_mcpi_structures"></block>
 
     <block type="mcpi_place_block">

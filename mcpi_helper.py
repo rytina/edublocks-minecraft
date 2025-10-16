@@ -44,12 +44,10 @@ def build_walls(
     material: int = DEFAULT_MATERIAL,
     host: str = DEFAULT_HOST,
     port: int = DEFAULT_PORT,
-) -> List[Tuple[int, int, int]]:
-    """Build a hollow rectangular set of walls using the given material and return placed blocks."""
+) -> None:
+    """Build a hollow rectangular set of walls using the given material."""
     mc = Minecraft.create(host, port)
     mc.postToChat(f"edublocks: building house walls at {x},{y},{z} using material {material}")
-
-    placed_blocks: List[Tuple[int, int, int]] = []
 
     # Front and back walls
     for wall_z in [z, z + width - 1]:
@@ -59,7 +57,6 @@ def build_walls(
                 block_y = y + dy
                 block_z = wall_z
                 mc.setBlock(block_x, block_y, block_z, material)
-                placed_blocks.append((block_x, block_y, block_z))
 
     # Left and right walls (excluding corners already placed)
     for wall_x in [x, x + width - 1]:
@@ -69,6 +66,3 @@ def build_walls(
                 block_y = y + dy
                 block_z = z + dz
                 mc.setBlock(block_x, block_y, block_z, material)
-                placed_blocks.append((block_x, block_y, block_z))
-
-    return placed_blocks

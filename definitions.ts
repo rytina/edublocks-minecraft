@@ -32,9 +32,12 @@ Blockly.Blocks["mcpi_place_block"] = {
 Blockly.Blocks["mcpi_move_player"] = {
     init: function () {
         this.appendDummyInput().appendField("move_player(");
+        this.appendValueInput("player_name")
+            .setCheck("String")
+            .appendField("player_name=");
         this.appendValueInput("x")
             .setCheck("Number")
-            .appendField("x=");
+            .appendField(", x=");
         this.appendValueInput("y")
             .setCheck("Number")
             .appendField(", y=");
@@ -51,7 +54,7 @@ Blockly.Blocks["mcpi_move_player"] = {
         this.setOutput(true, null);
         this.setInputsInline(true);
         this.setColour(MCPI_COLOR);
-        this.setTooltip("Move the player to coordinates");
+        this.setTooltip("Move the specified player to coordinates");
     },
 };
 

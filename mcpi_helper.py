@@ -23,16 +23,33 @@ def place_block(
 
 
 def move_player(
-    x: int = 0,
-    y: int = 64,
-    z: int = 0,
+    player_name: str,
+    x: int,
+    y: int,
+    z: int,
     host: str = DEFAULT_HOST,
     port: int = DEFAULT_PORT,
 ) -> None:
-    """Move the player to the supplied coordinates."""
+    """Move the specified player to the supplied coordinates.
+    
+    Args:
+        x: The x coordinate to move to
+        y: The y coordinate to move to
+        z: The z coordinate to move to
+        player_name: The name of the player to move (required)
+        host: The Minecraft server host
+        port: The Minecraft server port
+        
+    Raises:
+        ValueError: If player_name is None or empty
+    """
+    if not player_name:
+        raise ValueError("Player name is required. Please specify a valid player name.")
+    
     mc = Minecraft.create(host, port)
-    mc.player.setPos(x, y, z)
-    mc.postToChat(f"edublocks: moved player to {x},{y},{z}")
+    player_id = mc.getPlayerEntityId(player_name)
+    mc.entity.setPos(player_id, x, y, z)
+    mc.postToChat(f"edublocks: moved player {player_name} to {x},{y},{z}")
 
 
 def build_walls(

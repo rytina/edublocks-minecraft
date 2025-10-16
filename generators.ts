@@ -16,6 +16,10 @@ Blockly.Python["mcpi_place_block"] = function (block: Blockly.Block) {
 };
 
 Blockly.Python["mcpi_move_player"] = function (block: Blockly.Block) {
+    const player_name = Blockly.Python.valueToCode(block, "player_name", Blockly.Python.ORDER_NONE);
+    if (!player_name) {
+        throw new Error("Player name is required");
+    }
     const x = Blockly.Python.valueToCode(block, "x", Blockly.Python.ORDER_NONE) || "0";
     const y = Blockly.Python.valueToCode(block, "y", Blockly.Python.ORDER_NONE) || "64";
     const z = Blockly.Python.valueToCode(block, "z", Blockly.Python.ORDER_NONE) || "0";
@@ -23,7 +27,7 @@ Blockly.Python["mcpi_move_player"] = function (block: Blockly.Block) {
         Blockly.Python.valueToCode(block, "host", Blockly.Python.ORDER_NONE) || '"127.0.0.1"';
     const port =
         Blockly.Python.valueToCode(block, "port", Blockly.Python.ORDER_NONE) || "4711";
-    const code = `move_player(x=${x}, y=${y}, z=${z}, host=${host}, port=${port})`;
+    const code = `move_player(player_name=${player_name}, x=${x}, y=${y}, z=${z}, host=${host}, port=${port})`;
     return [code, Blockly.Python.ORDER_FUNCTION_CALL];
 };
 

@@ -61,7 +61,7 @@ The extension uses the standard MCPI API through the `mcpi.minecraft.Minecraft` 
 
 ## Project Structure
 
-- `mcpi_structures.py` - Structure building functions
+- `mcpi_helper.py` - Helper functions for building structures and interacting with MCPI
 - `definitions.ts` - Block definitions for EduBlocks
 - `generators.ts` - Code generation for blocks
 - `toolbox.xml` - Toolbox configuration

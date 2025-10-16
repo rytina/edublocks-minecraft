@@ -2,13 +2,13 @@ import * as Blockly from "blockly";
 
 const MCPI_COLOR = "#5C9C3D"; // Minecraft grass block green
 
-Blockly.Blocks["import_mcpi_structures"] = {
+Blockly.Blocks["import_mcpi_helper"] = {
     init: function () {
-        this.appendDummyInput().appendField("from mcpi_structures import *");
+        this.appendDummyInput().appendField("from mcpi_helper import *");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(MCPI_COLOR);
-        this.setTooltip("Import MCPI structure building functions");
+        this.setTooltip("Import MCPI helper functions");
     },
 };
 
@@ -55,7 +55,7 @@ Blockly.Blocks["mcpi_move_player"] = {
     },
 };
 
-Blockly.Blocks["mcpi_build_wall"] = {
+Blockly.Blocks["mcpi_build_walls"] = {
     init: function () {
         this.appendDummyInput().appendField("build_walls(");
         this.appendValueInput("x")
@@ -73,6 +73,9 @@ Blockly.Blocks["mcpi_build_wall"] = {
         this.appendValueInput("height")
             .setCheck("Number")
             .appendField(", height=");
+        this.appendValueInput("material")
+            .setCheck(null)
+            .appendField(", material=");
         this.appendValueInput("host")
             .setCheck("String")
             .appendField(", host=");

@@ -14,7 +14,7 @@
             "generators.ts"
         ]
     },
-    "library": "mcpi_structures.py",
-    "starterCode": "from mcpi_structures import *\n",
-    "starterWorkspace": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"import_mcpi_structures\" id=\"import_mcpi_structures\" x=\"40\" y=\"40\"></block></xml>"
+    "library": "mcpi_helper.py",
+    "starterCode": "from mcpi_helper import *\n",
+    "starterWorkspace": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"import_mcpi_helper\" id=\"import_mcpi_helper\" x=\"40\" y=\"40\"></block></xml>"
 }

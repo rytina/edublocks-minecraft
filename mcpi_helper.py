@@ -1,20 +1,24 @@
-"""Utility helpers for building Minecraft Pi structures from EduBlocks."""
+"""Helper functions for interfacing with Minecraft from EduBlocks."""
 from __future__ import annotations
 
 from typing import List, Tuple
 
 from mcpi.minecraft import Minecraft
+from mcpi import block
 
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = 4711
+DEFAULT_MATERIAL = block.STONE.id
 
 
-def place_block(host: str = DEFAULT_HOST, port: int = DEFAULT_PORT) -> Tuple[int, int, int]:
-    """Place a stone block at a fixed location and return its coordinates."""
+def place_block(
+    host: str = DEFAULT_HOST, port: int = DEFAULT_PORT, material: int = DEFAULT_MATERIAL
+) -> Tuple[int, int, int]:
+    """Place a block (default material) at a fixed location and return its coordinates."""
     mc = Minecraft.create(host, port)
     x, y, z = 0, 64, 0
-    mc.setBlock(x, y, z, 1)  # 1 is the block ID for stone
-    mc.postToChat(f"edublocks: placed block at {x},{y},{z}")
+    mc.setBlock(x, y, z, material)
+    mc.postToChat(f"edublocks: placed block at {x},{y},{z} using material {material}")
     return x, y, z
 
 
@@ -24,12 +28,11 @@ def move_player(
     z: int = 0,
     host: str = DEFAULT_HOST,
     port: int = DEFAULT_PORT,
-) -> Tuple[int, int, int]:
-    """Move the player to the supplied coordinates and return the position."""
+) -> None:
+    """Move the player to the supplied coordinates."""
     mc = Minecraft.create(host, port)
     mc.player.setPos(x, y, z)
     mc.postToChat(f"edublocks: moved player to {x},{y},{z}")
-    return x, y, z
 
 
 def build_walls(
@@ -38,12 +41,13 @@ def build_walls(
     z: int = 0,
     width: int = 5,
     height: int = 3,
+    material: int = DEFAULT_MATERIAL,
     host: str = DEFAULT_HOST,
     port: int = DEFAULT_PORT,
 ) -> List[Tuple[int, int, int]]:
-    """Build a hollow rectangular set of stone walls and return placed blocks."""
+    """Build a hollow rectangular set of walls using the given material and return placed blocks."""
     mc = Minecraft.create(host, port)
-    mc.postToChat(f"edublocks: building house walls at {x},{y},{z}")
+    mc.postToChat(f"edublocks: building house walls at {x},{y},{z} using material {material}")
 
     placed_blocks: List[Tuple[int, int, int]] = []
 
@@ -54,7 +58,7 @@ def build_walls(
                 block_x = x + dx
                 block_y = y + dy
                 block_z = wall_z
-                mc.setBlock(block_x, block_y, block_z, 1)
+                mc.setBlock(block_x, block_y, block_z, material)
                 placed_blocks.append((block_x, block_y, block_z))
 
     # Left and right walls (excluding corners already placed)
@@ -64,7 +68,7 @@ def build_walls(
                 block_x = wall_x
                 block_y = y + dy
                 block_z = z + dz
-                mc.setBlock(block_x, block_y, block_z, 1)
+                mc.setBlock(block_x, block_y, block_z, material)
                 placed_blocks.append((block_x, block_y, block_z))
 
     return placed_blocks

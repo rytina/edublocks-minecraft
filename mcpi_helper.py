@@ -12,11 +12,27 @@ DEFAULT_MATERIAL = block.STONE.id
 
 
 def place_block(
-    host: str = DEFAULT_HOST, port: int = DEFAULT_PORT, material: int = DEFAULT_MATERIAL
+    x: int = 0,
+    y: int = 64,
+    z: int = 0,
+    material: int = DEFAULT_MATERIAL,
+    host: str = DEFAULT_HOST,
+    port: int = DEFAULT_PORT,
 ) -> Tuple[int, int, int]:
-    """Place a block (default material) at a fixed location and return its coordinates."""
+    """Place a block at the specified coordinates and return its position.
+    
+    Args:
+        x: The x coordinate to place the block at
+        y: The y coordinate to place the block at
+        z: The z coordinate to place the block at
+        material: The block material to use
+        host: The Minecraft server host
+        port: The Minecraft server port
+    
+    Returns:
+        A tuple of (x, y, z) coordinates where the block was placed
+    """
     mc = Minecraft.create(host, port)
-    x, y, z = 0, 64, 0
     mc.setBlock(x, y, z, material)
     mc.postToChat(f"edublocks: placed block at {x},{y},{z} using material {material}")
     return x, y, z

@@ -15,9 +15,21 @@ Blockly.Blocks["import_mcpi_helper"] = {
 Blockly.Blocks["mcpi_place_block"] = {
     init: function () {
         this.appendDummyInput().appendField("place_block(");
+        this.appendValueInput("x")
+            .setCheck("Number")
+            .appendField("x=");
+        this.appendValueInput("y")
+            .setCheck("Number")
+            .appendField(", y=");
+        this.appendValueInput("z")
+            .setCheck("Number")
+            .appendField(", z=");
+        this.appendValueInput("material")
+            .setCheck("String")
+            .appendField(", material=");
         this.appendValueInput("host")
             .setCheck("String")
-            .appendField("host=");
+            .appendField(", host=");
         this.appendValueInput("port")
             .setCheck("Number")
             .appendField(", port=");
@@ -25,7 +37,7 @@ Blockly.Blocks["mcpi_place_block"] = {
         this.setOutput(true, null);
         this.setInputsInline(true);
         this.setColour(MCPI_COLOR);
-        this.setTooltip("Place a block and return its position");
+        this.setTooltip("Place a block at specific coordinates");
     },
 };
 

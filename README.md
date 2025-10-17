@@ -1,6 +1,6 @@
 # EduBlocks Minecraft
 
-A Minecraft integration for EduBlocks that provides block-based programming capabilities for interacting with Minecraft Pi Edition or compatible servers using the MCPI protocol.
+A EduBlocks extension that provides block-based programming capabilities for interacting with Minecraft Pi Edition or compatible servers using the MCPI protocol.
 
 ## Features
 
@@ -32,12 +32,12 @@ pip install -r requirements.txt
 The extension provides several Minecraft control blocks:
 
 1. **Import Blocks**
-   - Import MCPI structures
+   - Import MCPI helper functions
 
 2. **Basic Operations**
-   - Place a block and get its position/type
-   - Move player to coordinates
-   - Build wall structure
+   - Place a block with specific material
+   - Move a specific player to coordinates
+   - Build wall structures
 
 ## Example Usage
 
@@ -45,7 +45,6 @@ Once the blocks are imported, you can:
 - Place blocks at specific coordinates
 - Move the player around the world
 - Build walls of specified width and height
-- Get block information from the world
 
 Default server connection is to `localhost:4711`.
 

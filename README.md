@@ -1,6 +1,6 @@
 # EduBlocks Minecraft
 
-A Minecraft integration for EduBlocks that provides block-based programming capabilities for interacting with Minecraft Pi Edition or compatible servers using the MCPI protocol.
+A EduBlocks extension that provides block-based programming capabilities for interacting with Minecraft Pi Edition or compatible servers using the MCPI protocol.
 
 ## Features
 
